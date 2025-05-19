@@ -1,5 +1,6 @@
 
-git add README.md
-git commit -m "Fix formatting in README"
-git push origin main
+# Git Command
+'''bash
+git commit -m "Add README file"
+'''
 
