@@ -2,21 +2,19 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build cpp",
+      "label": "build file",
       "type": "shell",
       "command": "g++",
       "args": [
         "${file}",
-        "-g",
         "-o",
-        "${workspaceFolder}/build/Debug/outDebug.exe"
+        "${fileDirname}/${fileBasenameNoExtension}.exe"
       ],
       "group": {
         "kind": "build",
         "isDefault": true
       },
-      "problemMatcher": ["$gcc"],
-      "detail": "Compiled by ChatGPT configuration"
+      "problemMatcher": ["$gcc"]
     }
   ]
 }
