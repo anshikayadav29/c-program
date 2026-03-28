@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {1,2,3,4,5};
+    int key = 3;
+
+    for(int i = 0; i < 5; i++) {
+        if(arr[i] == key) {
+            cout << "Found at index " << i;
+            return 0;
+        }
+    }
+    cout << "Not found";
+}
