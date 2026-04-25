@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int tree[100];
+
+void build(int arr[], int node, int start, int end) {
+    if(start==end) tree[node]=arr[start];
+    else {
+        int mid=(start+end)/2;
+        build(arr,2*node,start,mid);
+        build(arr,2*node+1,mid+1,end);
+        tree[node]=tree[2*node]+tree[2*node+1];
+    }
+}
+
+int query(int node,int start,int end,int l,int r) {
+    if(r<start||end<l) return 0;
+    if(l<=start&&end<=r) return tree[node];
+    int mid=(start+end)/2;
+    return query(2*node,start,mid,l,r)
+         + query(2*node+1,mid+1,end,l,r);
+}
+
+int main() {
+    int arr[]={1,2,3,4};
+    build(arr,1,0,3);
+    cout<<query(1,0,3,1,3);
+}
